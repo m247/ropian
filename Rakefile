@@ -5,10 +5,11 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ropian"
-    gem.summary = %Q{TODO}
+    gem.summary = %Q{Suite of tools for working with network power units}
     gem.email = "geoff@geoffgarside.co.uk"
     gem.homepage = "http://github.com/geoffgarside/ropian"
     gem.authors = ["Geoff Garside"]
+    gem.add_dependency('snmp', '>= 1.0.2')
 
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
