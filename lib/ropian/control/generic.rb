@@ -21,7 +21,7 @@ module Ropian
       def set_state(state, port_index)
         raise ArgumentError, "invalid state" unless States.include?(state)
         @manager.set(SNMP::VarBind.new(base_oid + port_index,
-                                        state_order.index(state)))
+                                        SNMP::Integer.new(state_order.index(state))))
       end
       protected
         def base_oid
