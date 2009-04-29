@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ropian}
-  s.version = "0.0.1"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Geoff Garside"]
-  s.date = %q{2009-04-24}
+  s.date = %q{2009-04-29}
   s.email = %q{geoff@geoffgarside.co.uk}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
     "lib/ropian/control/apc.rb",
     "lib/ropian/control/generic.rb",
     "lib/ropian/control/raritan.rb",
+    "lib/ropian/meter/apc.rb",
+    "lib/ropian/meter/generic.rb",
     "lib/ropian/meter/raritan.rb",
     "test/ropian_test.rb",
     "test/test_helper.rb"
