@@ -11,6 +11,8 @@ begin
     gem.authors = ["Geoff Garside"]
     gem.add_dependency('snmp', '>= 1.0.2')
 
+    gem.files.exclude 'doc/*.mib'
+
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
