@@ -2,7 +2,9 @@ require 'ropian/control/generic'
 require 'ropian/control/raritan'
 require 'ropian/control/apc'
 
+require 'ropian/meter/generic'
 require 'ropian/meter/raritan'
+require 'ropian/meter/apc'
 
 require 'snmp'
 
