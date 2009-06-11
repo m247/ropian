@@ -2,40 +2,42 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ropian}
-  s.version = "0.0.3"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Geoff Garside"]
-  s.date = %q{2009-04-29}
+  s.date = %q{2009-06-11}
   s.email = %q{geoff@geoffgarside.co.uk}
   s.extra_rdoc_files = [
     "LICENSE",
-    "README.rdoc"
+     "README.rdoc"
   ]
   s.files = [
-    "LICENSE",
-    "README.rdoc",
-    "Rakefile",
-    "VERSION.yml",
-    "lib/ropian.rb",
-    "lib/ropian/control/apc.rb",
-    "lib/ropian/control/generic.rb",
-    "lib/ropian/control/raritan.rb",
-    "lib/ropian/meter/apc.rb",
-    "lib/ropian/meter/generic.rb",
-    "lib/ropian/meter/raritan.rb",
-    "test/ropian_test.rb",
-    "test/test_helper.rb"
+    ".document",
+     ".gitignore",
+     "LICENSE",
+     "README.rdoc",
+     "Rakefile",
+     "VERSION.yml",
+     "lib/ropian.rb",
+     "lib/ropian/control/apc.rb",
+     "lib/ropian/control/generic.rb",
+     "lib/ropian/control/raritan.rb",
+     "lib/ropian/meter/apc.rb",
+     "lib/ropian/meter/generic.rb",
+     "lib/ropian/meter/raritan.rb",
+     "ropian.gemspec",
+     "test/ropian_test.rb",
+     "test/test_helper.rb"
   ]
-  s.has_rdoc = true
   s.homepage = %q{http://github.com/geoffgarside/ropian}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.2}
+  s.rubygems_version = %q{1.3.4}
   s.summary = %q{Suite of tools for working with network power units}
   s.test_files = [
     "test/ropian_test.rb",
-    "test/test_helper.rb"
+     "test/test_helper.rb"
   ]
 
   if s.respond_to? :specification_version then
