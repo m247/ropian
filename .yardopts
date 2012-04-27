@@ -1,0 +1,3 @@
+lib/**/*.rb
+--readme README.rdoc
+--files LICENSE

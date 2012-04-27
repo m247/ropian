@@ -1,59 +1,12 @@
-require 'rubygems'
-require 'rake'
+require 'bundler/gem_helper'
+
+Bundler::GemHelper.install_tasks
 
 begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "ropian"
-    gem.summary = %Q{Suite of tools for working with network power units}
-    gem.email = "geoff@geoffgarside.co.uk"
-    gem.homepage = "http://github.com/geoffgarside/ropian"
-    gem.authors = ["Geoff Garside"]
-    gem.add_dependency('snmp', '>= 1.0.2')
-
-    gem.files.exclude 'doc/*.mib'
-
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
+  require 'yard'
+  YARD::Rake::YardocTask.new
 rescue LoadError
-  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
-end
-
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/*_test.rb'
-  test.verbose = true
-end
-
-begin
-  require 'rcov/rcovtask'
-  Rcov::RcovTask.new do |test|
-    test.libs << 'test'
-    test.pattern = 'test/**/*_test.rb'
-    test.verbose = true
-  end
-rescue LoadError
-  task :rcov do
-    abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
+  task :yardoc do
+    abort "YARD is not available. In order to run yardoc you must: sudo gem install yard"
   end
 end
-
-
-task :default => :test
-
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  if File.exist?('VERSION.yml')
-    config = YAML.load(File.read('VERSION.yml'))
-    version = "#{config[:major]}.#{config[:minor]}.#{config[:patch]}"
-  else
-    version = ""
-  end
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "ropian #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
-
