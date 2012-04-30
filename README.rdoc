@@ -1,6 +1,13 @@
-= ropian
+= Ropian
 
-Description goes here.
+Ropian is a library of Networked Power Distribution Unit management utilities. The library currently provides
+support for collecting power usage stats and setting the power state of power sockets.
+
+== Supported Hardware
+This library currently supports the following vendors
+
+* APC
+* Raritan
 
 == Copyright
 
