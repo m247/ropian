@@ -1,3 +1,4 @@
 lib/**/*.rb
+--no-private
 --readme README.rdoc
 --files LICENSE
