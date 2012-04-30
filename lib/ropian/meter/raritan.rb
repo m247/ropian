@@ -1,28 +1,25 @@
 module Ropian
   module Meter
+    # This class provides support for Raritan brand power devices.
     class Raritan < Generic
-      UnitCurrent = SNMP::ObjectId.new("1.3.6.1.4.1.13742.4.1.4.2.1.3.1")
-      OutletCurrent = SNMP::ObjectId.new("1.3.6.1.4.1.13742.4.1.2.2.1.4")
-
-      def collect # :yields: total_amps, hash_of_outlet_amps
-        results = Hash.new
-
-        @manager.walk(OutletCurrent) do |r|
-          r.each do |varbind|
-            results[varbind.name.index(OutletCurrent)] = varbind.value.to_f / 1000
-          end
+      protected
+        # If the vendor returns current in values in milli-amps for example
+        # this method can be overridden to return 1000.
+        #
+        # @return [Numeric] Amps scaling factor.
+        def amps_scale_factor
+          1000
         end
 
-        yield total_amps, results
-      end
-      # Amps in total on whole bar
-      def total_amps
-        amps_for_oid(UnitCurrent)
-      end
-      # Amps per outlet
-      def outlet_amps(outlet_index)
-        amps_for_oid(OutletCurrent + outlet_index)
-      end
+        # @return [SNMP::ObjectId] SNMP OID where the unit current can be retrieved
+        def unit_current_oid
+          @unit_current_oid ||= SNMP::ObjectId.new("1.3.6.1.4.1.13742.4.1.4.2.1.3.1")
+        end
+
+        # @return [SNMP::ObjectId] Base SNMP OID where the outlet current can be retrieved
+        def outlet_current_base_oid
+          @outlet_current_base_oid ||= SNMP::ObjectId.new("1.3.6.1.4.1.13742.4.1.2.2.1.4")
+        end
     end
   end
 end
