@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name = "ropian"
-  s.version = "0.1.1"
+  s.version = "0.1.2.pre"
   s.authors = ["Geoff Garside"]
   s.email = ["geoff@geoffgarside.co.uk"]
   s.homepage = "http://github.com/geoffgarside/ropian"
